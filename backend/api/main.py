@@ -7,9 +7,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+origins = [
+        "http://localhost:5500",
+        "https://manticike.github.io",
+        ]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://manticike.github.io/background-remover/"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
